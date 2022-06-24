@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>shaurya_training.Assignment.oops.Test.collection	</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject>shaurya_training.collection.DemoSortedlist</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Assignment\ExceptionHandling\" />
+  </ItemGroup>
+
+</Project>
