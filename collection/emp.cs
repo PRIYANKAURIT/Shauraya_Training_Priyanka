@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace shaurya_training.Assignment.oops.Test.collection
+namespace shaurya_training.collection
 {
     //collection
     //Array        both are containers in which store data.

@@ -24,39 +24,14 @@ method and also show runtime polymorphism
 
 namespace shaurya_training.Assignment.oops
 {
-	//internal class Teacher
-	/* {
-		 public int Tid, MobileNo;
-		 public string Tname;
 
-		 public Teacher(int tid, int mobileNo, string tname)
-		 {
-			 Tid = tid;
-			 MobileNo = mobileNo;
-			 Tname = tname;
-		 }
-
-		 abstract void Salary();
-
-	 }
-	 internal class Hourlybased : Teacher
-	 {
-		 public int hrs, rate_per_hr;
-
-		 public Hourlybased(int hrs, int rate_per_hr)
-		 {
-			 this.hrs = hrs;
-			 this.rate_per_hr = rate_per_hr;
-		 }
-		 void salary(int salary)
-	 }*/
-	/*public abstract class Teacher
+	public abstract class Teacher
 	{
 		public int tid;
 		public string tname;
 		public long mobileno;
 
-		
+
 
 		public Teacher(int tid, string tname, long mobileno)
 		{
@@ -76,7 +51,7 @@ namespace shaurya_training.Assignment.oops
 
 		int rate_per_hr, hrs;
 
-		public Hourlybased(int rate_per_hr, int hrs)
+		public Hourlybased(int tid, string nm, long mb, int rate_per_hr, int hrs) : base(tid, nm, mb)
 		{
 			this.rate_per_hr = rate_per_hr;
 			this.hrs = hrs;
@@ -92,7 +67,7 @@ namespace shaurya_training.Assignment.oops
 
 		int sal;
 
-		public SalaryBased(int sal)
+		public SalaryBased(int tid, string nm, long mb, int sal) : base(tid, nm, mb)
 		{
 			this.sal = sal;
 		}
@@ -106,13 +81,13 @@ namespace shaurya_training.Assignment.oops
 	{
 		static void Main(string[] args)
 		{
-			Hourlybased myhourlybased = new Hourlybased(4, 1);
-			SalaryBased mysalaryBased = new SalaryBased(4500);
+			Hourlybased myhourlybased = new Hourlybased(1, "Priyanka", 98247343435, 4, 1);
+			SalaryBased mysalaryBased = new SalaryBased(1, "priyanka", 9851684121, 4500);
 			myhourlybased.salary();
 			mysalaryBased.salary();
 		}
 	}
-	*/
+
 	/*2.	A Pen contains variables Refill r, int capLength and String brand.
 		Refill has variables inkColor, length and Nib(tip).
 	 Nib has variables materialType and width.
@@ -120,8 +95,8 @@ namespace shaurya_training.Assignment.oops
 Write a main method which sets values in all the variables
 using setter methods and prints all the variables using getter methods.
 */
-	/*
-	internal class pen
+
+	public class pen
 	{
 		public string refill, brand;
 		public int capLength;
@@ -245,19 +220,19 @@ using setter methods and prints all the variables using getter methods.
 			}
 		}
 
-	*/
+
 
 		/*3.	Write a java program to create 2 person objects.Take input or hardcode  for all two person from console.
 		  Person class is as follows
          Person(int id, String name, Vehicle v)
          Vehicle(int vid, String vname)*/
 
-		internal class person
+		public class person
 		{
 			public int id { get; set; }
 			public string name { get; set; }
 			public string Vehicle { get; set; }
-		
+
 		}
 		class Vehicle : person
 		{
@@ -265,23 +240,23 @@ using setter methods and prints all the variables using getter methods.
 			public string vname { get; set; }
 		}
 		class Test2
-		{ 
+		{
 			static void Main(string[] args)
 			{
 				Vehicle v = new Vehicle();
 				v.vid = 101;
 				v.vname = "scooty";
-				
+
 				v.id = 101;
 				v.name = "priya";
-			    v.Vehicle = "TwoWheeler";
+				v.Vehicle = "TwoWheeler";
 				Console.WriteLine(v.id);
 				Console.WriteLine(v.name);
 				Console.WriteLine(v.Vehicle);
-				
+
 				Console.WriteLine(v.vid);
 				Console.WriteLine(v.vname);
-				
+
 			}
 		}
 
@@ -289,18 +264,65 @@ using setter methods and prints all the variables using getter methods.
 		Strawberry, BlackForest both implementing Cake interface.
 		*/
 
-		internal class Class4
+		public interface cake
 		{
-
+			public void bake();
+		}
+		class Strawberry : cake
+		{
+			public void bake()
+			{
+				Console.WriteLine("strawberry flavour");
+			}
+		}
+		class BlackForest : cake
+		{
+			public void bake()
+			{
+				Console.WriteLine("BlackForest flavour");
+			}
+		}
+		static void Main(string[] args)
+		{
+			Strawberry s = new Strawberry();
+			s.bake();
+			BlackForest b = new BlackForest();
+			b.bake();
 		}
 		/*5.	 Create interface IceCream with method eat and Juice with method drink,
 		Create class Mastani which implements both interfaces.
 		*/
 
-		internal class Class5
+		public interface Icecream
 		{
-
+			public void eat();
 		}
+		public interface Juice
+		{
+			public void drink();
+		}
+		public class Mastani : Icecream, Juice
+		{
+			public void eat()
+			{
+				Console.WriteLine(eat);
+			}
+			public void drink()
+			{
+				Console.WriteLine(drink);
+			}
+		}
+		class cold
+		{
+			static void Main(string[] args)
+			{
+				Mastani m = new Mastani();
+				m.eat();
+				m.drink();
+			}
+		}
+
+
 		/*6.	Design a class to overload a function volume() as follows:  [2M]
 			(i) double volume(double r) – with radius ‘r’ as an argument, returns the volume of sphere using the formula:
 		v = 4 / 3 × 22 / 7 × r3
@@ -308,13 +330,13 @@ using setter methods and prints all the variables using getter methods.
 		v = 22 / 7 × r2 × h
 		(iii) double volume(double l, double b, double h) – with length ‘l’, breadth ‘b’ and height ‘h’ as the arguments, returns the volume of a cuboid using the formula:
 		v = l × b × h*/
-/*
+
 		public class sphere
 		{
 			public static double volume(double r)
-            {
+			{
 				return 4 / 3 * 22 / 7 * r * r * r;
-            }
+			}
 
 			public static double volume(double h, double r)
 			{
@@ -326,15 +348,15 @@ using setter methods and prints all the variables using getter methods.
 				return l * b * h;
 			}
 
-            static void Main(string[] args)
-            {
+			static void Main(string[] args)
+			{
 				Console.WriteLine(sphere.volume(13));
-				Console.WriteLine(sphere.volume(13,14));
-				Console.WriteLine(sphere.volume(13,14,15));
+				Console.WriteLine(sphere.volume(13, 14));
+				Console.WriteLine(sphere.volume(13, 14, 15));
 
 			}
 
-		}*/
+		}
 
 		/*7.	Design class Order (int ordered, String Orderdate, Customer cust, Item item)
 		Customer(int custid, String custname, Address address)
@@ -342,9 +364,84 @@ using setter methods and prints all the variables using getter methods.
 		Item(int itemid, String itemname, int price)
 		Write constructors, properties  in respective classes.*/
 
-		internal class Class7
+		public class order
 		{
+			int ordered;
+			string orderdate;
 
+			public order(int ordered, string orderdate)
+			{
+				this.Ordered = ordered;
+				this.Orderdate = orderdate;
+			}
+
+			public int Ordered { get => ordered; set => ordered = value; }
+			public string Orderdate { get => orderdate; set => orderdate = value; }
+
+			public void cutomer()
+			{
+
+			}
+			public void Item()
+			{
+
+			}
+
+		}
+		public class Customer
+		{
+			int custid;
+			String custname;
+
+			public Customer(int custid, string custname)
+			{
+				this.Custid = custid;
+				this.Custname = custname;
+			}
+
+			public int Custid { get => custid; set => custid = value; }
+			public string Custname { get => custname; set => custname = value; }
+
+			public void Address()
+			{
+
+			}
+
+
+		}
+		public class Address
+		{
+			String addr1;
+			string city;
+			int pincode;
+
+			public Address(string addr1, string city, int pincode)
+			{
+				this.Addr1 = addr1;
+				this.City = city;
+				this.Pincode = pincode;
+			}
+
+			public string Addr1 { get => addr1; set => addr1 = value; }
+			public string City { get => city; set => city = value; }
+			public int Pincode { get => pincode; set => pincode = value; }
+		}
+		public class Item
+		{
+			int itemid;
+			String itemname;
+			int price;
+
+			public Item(int itemid, string itemname, int price)
+			{
+				this.Itemid = itemid;
+				this.Itemname = itemname;
+				this.Price = price;
+			}
+
+			public int Itemid { get => itemid; set => itemid = value; }
+			public string Itemname { get => itemname; set => itemname = value; }
+			public int Price { get => price; set => price = value; }
 		}
 
 		/*8.	Create a class Account with member Variable: 
@@ -368,13 +465,13 @@ using setter methods and prints all the variables using getter methods.
 
 		/*9.	WAP to find Area of Square, Rectangle, and Circle using Method Overloading*/
 
-	/*	internal class Class9
+		public class Class9
 		{
-			public static double Area(double s)
-            {
+			public static float Area(float s)
+			{
 				return s * s;
-            }
-			public static double Area(double w,double l)
+			}
+			public static double Area(double w, double l)
 			{
 				return w * l;
 			}
@@ -383,60 +480,7 @@ using setter methods and prints all the variables using getter methods.
 				return 22 / 7 * r * r;
 			}
 
-		}*/
-		/*10.	What is Exception Handling in C#?
-		 Exception is an abnormal termination which is occured at run time.Exception handling is to handle exception by using
-		try,catch,finally,throw block.
-
-		11.	What is the difference between System exceptions and Application exceptions?
-		12.	What is the main use of a finally block in exception handling?*/
-
-		/*13.	 WAP which throws IndexOutOfRangeException.In the console, observe the stack trace and the line number from 
-				where the Exception is thrown*/
-
-		internal class Class13
-		{
-
 		}
-
-		/*14.	WAP to use catch / handle the IndexOutOfRangeException exception*/
-
-		internal class Class14
-		{
-
-		}
-		/*15.	WAP to catch multiple exceptions. i.e IndexOutOfRangeException, NullReferenceException
-		and DivideByZeroException.*/
-
-		internal class Class15
-		{
-
-		}
-		/*16.	WAP to show checked exception and use multiple catch block with universal Exception handler.*/
-
-		internal class Class16
-		{
-
-		}
-		/*17.	WAP to check Exception handling with method overriding. Means, If super class method don’t
-		declare exception then subclass overridden method can declare exception or not.*/
-
-		internal class Class17
-		{
-
-		}
-		/*18.	WAP to create custom Exception and show use of throw keyword*/
-
-		internal class Class18
-		{
-
-		}
-		/*19.	WAP to create user defined Exception raise and catch the exception.*/
-
-		internal class Class19
-		{
-
-		}
-
 	}
+}
 

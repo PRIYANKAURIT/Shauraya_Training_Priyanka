@@ -35,8 +35,8 @@ namespace shaurya_training.collection
             SortedList<student1, string> st = new SortedList<student1, string>();
             st.Add(new student1(1, "suraj"), "pune");
             st.Add(new student1(2, "amit"), "pune");
-            st.Add(new student1(3, "garav"), "pune");
-            st.Add(new student1(4, "raj"), "pune");
+            st.Add(new student1(3, "gargi"), "pune");
+            st.Add(new student1(4, "priya"), "pune");
 
             foreach (KeyValuePair<student1, string> kv in st)
             {
