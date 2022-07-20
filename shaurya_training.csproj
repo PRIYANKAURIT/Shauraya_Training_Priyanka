@@ -6,7 +6,7 @@
     <RootNamespace>shaurya_training</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>shaurya_training.Assignment.ExceptionHandling.exp1</StartupObject>
+    <StartupObject>shaurya_training.LINQ.Cource</StartupObject>
     
   </PropertyGroup>
 
