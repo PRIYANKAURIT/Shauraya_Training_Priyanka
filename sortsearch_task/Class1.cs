@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace shaurya_training.sortsearch_task
 {
+    //sort and then search
     public class Class1
     {
         static void Main(string[] args)
